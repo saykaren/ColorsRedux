@@ -1,0 +1,9 @@
+const constants = {
+  SORT_COLORS: 'SORT_COLORS',
+  ADD_COLORS: 'ADD_COLORS',
+  RATE_COLORS: 'RATE_COLORS',
+  REMOVE_COLORS: 'REMOVE_COLORS',
+  ADD_ARTICLE: 'ADD_ARTICLE'
+}
+
+export default constants
