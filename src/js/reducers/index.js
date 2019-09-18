@@ -1,5 +1,6 @@
 import C from '../constants';
-import {REMOVE_COLOR} from '../actions/addColorAction';
+// import {REMOVE_COLOR} from '../actions/addColorAction';
+import uuidv1 from 'uuid';
 
 
 const initialState = {
@@ -30,15 +31,42 @@ const initialState = {
 
 function rootReducer(state = initialState, action){
   switch(action.type){
+    // case C.ADD_COLORS:
+    //   return {
+    //     id: uuidv1(),
+    //     title: action.title,
+    //     color: action.color,
+    //     timestamp: action.timestamp,
+    //     rating: 0
+    //   }
     case C.ADD_COLORS:
-    return Object.assign({}, state, {
-      colors: state.colors.concat(action.payload)
-    });
+        return Object.assign({}, state, {
+          colors: state.colors.concat(action.payload)
+        });
+    // case C.RATE_COLORS:
+    //   return (state.id !==action.id)?
+    //     state:
+    //       {
+    //         ...state,
+    //         rating: action.rating
+    //       }
+    // case C.REMOVE_COLORS:
+    //   return state.filter(
+    //     c=>c.id !==action.id)
     default:
       return state;
   }
-  
 };
 
 
+    // case C.RATE_COLORS:
+    //   return (state.id !==action.id)?
+    //     state:
+    //       {
+    //         ...state,
+    //         rating: action.rating
+    //       }
+    // case C.REMOVE_COLORS:
+    //   return state.filter(
+    //     c=>c.id !==action.id)
 export default rootReducer;
