@@ -1,35 +1,17 @@
 import React from 'react';
 import './App.css';
 import List from './List';
+import Form from './Form';
 
 const App = () =>(
-  <div className="row mt-5">
+  <div className="colorsList">
     <div className="col-md-4 offset-md-1">
-      <h2>Articles</h2>
+      <h2>Colors List</h2>
         <List />
+        <Form />
     </div>
   </div>
 );
 
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learning React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;

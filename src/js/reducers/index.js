@@ -1,6 +1,4 @@
-// import addArticle from '../actions/index';
 import C from '../constants';
-// import addColors from '../actions/addColorAction';
 
 const initialState = {
   colors: [
@@ -27,15 +25,6 @@ const initialState = {
     }
   ],
 };
-
-// function rootReducer(state = initialState, action){
-//   if (action.type === C.ADD_ARTICLE){
-//     return Object.assign({}, state, {
-//       articles: state.articles.concat(action.payload)
-//     });    
-//   }
-//   return state;
-// };
 
 function rootReducer(state = initialState, action){
   if (action.type === C.ADD_COLORS){
