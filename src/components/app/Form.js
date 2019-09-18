@@ -63,7 +63,10 @@ class ConnectedForm extends Component {
             placeholder="Hex Color"
           />
         </div>
-        <button type="submit" className="btn">
+        <button 
+          type="submit" 
+          className="btn"
+        >
           Save
         </button>
       </form>

@@ -1,4 +1,6 @@
 import C from '../constants';
+import {REMOVE_COLOR} from '../actions/addColorAction';
+
 
 const initialState = {
   colors: [
@@ -27,12 +29,16 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, action){
-  if (action.type === C.ADD_COLORS){
+  switch(action.type){
+    case C.ADD_COLORS:
     return Object.assign({}, state, {
       colors: state.colors.concat(action.payload)
-    });    
+    });
+    default:
+      return state;
   }
-  return state;
+  
 };
+
 
 export default rootReducer;
