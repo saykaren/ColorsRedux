@@ -33,14 +33,6 @@ const initialState = {
 function rootReducer(state = initialState, action){
   // console.log(`hello I am here`);
   switch(action.type){
-    // case C.ADD_COLORS:
-    //   return {
-    //     id: uuidv1(),
-    //     title: action.title,
-    //     color: action.color,
-    //     timestamp: action.timestamp,
-    //     rating: 0
-    //   }
     case C.ADD_COLORS:
         console.log(`add color ${action.payload}`);
         return Object.assign({}, state, {
@@ -65,9 +57,7 @@ function rootReducer(state = initialState, action){
       // console.log(state);
       // console.log(action.id);
       // console.log(state);
-      return objectArray;
-
-        
+      return objectArray;       
     
     default:
       return state;
@@ -75,15 +65,4 @@ function rootReducer(state = initialState, action){
 };
 
 
-
-    // case C.RATE_COLORS:
-    //   return (state.id !==action.id)?
-    //     state:
-    //       {
-    //         ...state,
-    //         rating: action.rating
-    //       }
-    // case C.REMOVE_COLORS:
-    //   return state.filter(
-    //     c=>c.id !==action.id)
 export default rootReducer;

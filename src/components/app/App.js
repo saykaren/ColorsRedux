@@ -4,6 +4,7 @@ import List from './List';
 import Form from './Form';
 import { reject } from 'q';
 import DeleteForm from './Deleting';
+import ChangeList from './ChangeableList';
 
 const getFakeMembers = count => new Promise((resolves, rejects)=>{
   const api = 'https://api.randomuser.me/?nat=US&result=${count}';
@@ -57,7 +58,7 @@ const App = () =>(
   <div className="colorsList">
     <div className="col-md-4 offset-md-1">
       <h2>Colors List</h2>
-        <List />
+    
         <Form />
 
 
@@ -69,6 +70,10 @@ const App = () =>(
       <DeleteForm />
       <MembersWhoop />
     </div>
+    <section>
+      I should be able to put delete button on this one
+      <ChangeList />
+    </section>
   </div>
 );
 
