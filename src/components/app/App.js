@@ -3,6 +3,7 @@ import './App.css';
 import List from './List';
 import Form from './Form';
 import { reject } from 'q';
+import DeleteForm from './Deleting';
 
 const getFakeMembers = count => new Promise((resolves, rejects)=>{
   const api = 'https://api.randomuser.me/?nat=US&result=${count}';
@@ -45,17 +46,27 @@ const buttonHandler = ()=>{
   
 }
 
+// function mapDisptachToProps (dispatch){
+//   return{
+//     removeColorAction: () => dispatch(removeColorAction("Rad Red"))
+//   };
+// }
+
+
 const App = () =>(
   <div className="colorsList">
     <div className="col-md-4 offset-md-1">
       <h2>Colors List</h2>
         <List />
         <Form />
+
+
       <button
         onClick={buttonHandler}
       >
         Push for API
       </button>
+      <DeleteForm />
       <MembersWhoop />
     </div>
   </div>

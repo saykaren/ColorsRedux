@@ -27,9 +27,11 @@ const initialState = {
       timestamp: "Thu Mar 10 2016 01:11:12 GMT-0800 (PST)"
     }
   ],
+  
 };
 
 function rootReducer(state = initialState, action){
+  // console.log(`hello I am here`);
   switch(action.type){
     // case C.ADD_COLORS:
     //   return {
@@ -40,6 +42,7 @@ function rootReducer(state = initialState, action){
     //     rating: 0
     //   }
     case C.ADD_COLORS:
+        console.log(`add color ${action.payload}`);
         return Object.assign({}, state, {
           colors: state.colors.concat(action.payload)
         });
@@ -53,10 +56,24 @@ function rootReducer(state = initialState, action){
     // case C.REMOVE_COLORS:
     //   return state.filter(
     //     c=>c.id !==action.id)
+    case C.REMOVE_COLORS:
+      // console.log(typeof(state));
+      const newArray = {...state}.colors.filter(x=>(x.id !==action.payload.id));
+      const objectArray = {colors: newArray}
+      // console.log(newArray);
+      // console.log(objectArray);
+      // console.log(state);
+      // console.log(action.id);
+      // console.log(state);
+      return objectArray;
+
+        
+    
     default:
       return state;
   }
 };
+
 
 
     // case C.RATE_COLORS:
