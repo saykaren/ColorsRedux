@@ -1,7 +1,6 @@
 import C from '../constants';
 
 export function removeColor(payload){
-  // console.log(`payload for remove colors ${payload}`);
-  // console.log(`payload id.... ${payload.id}`);
+  console.log(`in remove function`);
   return {type: C.REMOVE_COLORS, payload}
 };

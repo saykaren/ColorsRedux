@@ -5,8 +5,7 @@ import store from './js/store/index';
 import './index.css';
 import App from './components/app/App';
 import * as serviceWorker from './serviceWorker';
-import index from './js/index';
-
+import index from './js/WindowIndex';
 
 ReactDOM.render(
   <Provider store={store}>

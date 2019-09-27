@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {removeColor} from '../../js/actions/removeColorAction';
-
-function mapDisptachToProps (dispatch){
+////This is delete input form I am going to remove eventually 
+const mapDisptachToProps = (dispatch)=>{
   return{
     removeColor: colors => dispatch(removeColor(colors))
   };
 }
+
+// const mapStateToProps = state => {
+//   return {colors: state.colors};
+// };
 
 //example 
 // function mapDisptachToProps (dispatch){
@@ -27,8 +31,8 @@ const DeleteForm = (props)=>{
     
     // const id = uuidv1();
     // setTimeStamp(todayDate());
-
-    console.log(`color details are ${colorName}`);
+    // console.log({colorName});
+    // console.log(`color details are ${colorName}`);
     const Red = {id: "3315e1p5-3abl-0p523-30e4-8001l8yf3036", title: "Rad Red", color: "#FF0000", rating: 3, timestamp: "Sat Mar 12 2016 16:12:09 GMT-0800 (PST)"}
     props.removeColor(Red);
     // props.addColor({id, title, color, rating, timeStamp});

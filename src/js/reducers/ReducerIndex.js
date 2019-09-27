@@ -1,5 +1,4 @@
 import C from '../constants';
-// import {REMOVE_COLOR} from '../actions/addColorAction';
 import uuidv1 from 'uuid';
 
 
@@ -31,10 +30,10 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, action){
-  // console.log(`hello I am here`);
+  console.log(`hello I am here in switch statement`);
   switch(action.type){
     case C.ADD_COLORS:
-        console.log(`add color ${action.payload}`);
+        // console.log(`add color ${action.payload}`);
         return Object.assign({}, state, {
           colors: state.colors.concat(action.payload)
         });
@@ -48,16 +47,19 @@ function rootReducer(state = initialState, action){
     // case C.REMOVE_COLORS:
     //   return state.filter(
     //     c=>c.id !==action.id)
-    case C.REMOVE_COLORS:
-      // console.log(typeof(state));
+    case C.REMOVE_COLORS: //works with input 09/27/2019
+        console.log(`here in remove payload id is ${action.payload.id}`);
       const newArray = {...state}.colors.filter(x=>(x.id !==action.payload.id));
+      console.log(newArray);
       const objectArray = {colors: newArray}
-      // console.log(newArray);
-      // console.log(objectArray);
-      // console.log(state);
-      // console.log(action.id);
-      // console.log(state);
       return objectArray;       
+    // case C.REMOVE_COLORS: //works with input
+    //   // console.log(`payload is ${action.payload}`);
+    //   const be = action.payload;
+    //   console.log(`here ${be}`);
+    //   // const newArray = {...state}.colors.filter(x=>(x.id !==action.payload.id));
+    //   // const objectArray = {colors: newArray}
+    //   return state;  
     
     default:
       return state;
