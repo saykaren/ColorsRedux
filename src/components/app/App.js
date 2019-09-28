@@ -16,12 +16,12 @@ function App(){
 
   return(
   <div className="colorsList">
-    <div className="col-md-4 offset-md-1">
+    <div className="colorAdder">
       <h2>Colors List</h2>
         <Form />
        
     </div>
-    <section>
+    <section className="colorAdder">
       Redux Store List 
       <ul className='list-group list-group-flush'>
     {colors.map(el=>(

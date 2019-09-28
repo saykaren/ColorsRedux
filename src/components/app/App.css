@@ -8,35 +8,32 @@
   pointer-events: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button{
+  background-color: white;
+  border-radius: 10px;
+  margin: .25rem;
+  width: 50px;
+  height: 25px;
+  border: 1px solid black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.colorAdder {
+  padding: 2rem;
+  background-color: #d9eeec;
+  border-radius: 2rem;
+  padding: 3rem;
+  margin: 2rem;
+  border: 1px solid white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .colorsList{
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  flex-direction: row;
+  padding: 5rem;
   font-size: 3rem;
+  background-color: #3c70a4;
 }
 
 .form-control{
