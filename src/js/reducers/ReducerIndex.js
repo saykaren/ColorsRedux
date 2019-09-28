@@ -1,6 +1,4 @@
 import C from '../constants';
-import uuidv1 from 'uuid';
-
 
 const initialState = {
   colors: [
@@ -48,19 +46,18 @@ function rootReducer(state = initialState, action){
     //   return state.filter(
     //     c=>c.id !==action.id)
     case C.REMOVE_COLORS: //works with input 09/27/2019
-        console.log(`here in remove payload id is ${action.payload.id}`);
+        console.log(`here in remove payload id is ${action.payload}`);
       const newArray = {...state}.colors.filter(x=>(x.id !==action.payload.id));
       console.log(newArray);
       const objectArray = {colors: newArray}
       return objectArray;       
-    // case C.REMOVE_COLORS: //works with input
-    //   // console.log(`payload is ${action.payload}`);
-    //   const be = action.payload;
-    //   console.log(`here ${be}`);
-    //   // const newArray = {...state}.colors.filter(x=>(x.id !==action.payload.id));
-    //   // const objectArray = {colors: newArray}
-    //   return state;  
-    
+    case C.UP_RATING:
+      console.log(`in up rating ${action.payload.rating} ${typeof(action.payload.rating)}`);
+      action.payload.rating += 1; 
+      return state;  
+    case C.DOWN_RATING:
+      action.payload.rating -= 1;
+      return state;
     default:
       return state;
   }

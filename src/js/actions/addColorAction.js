@@ -5,4 +5,3 @@ export function addColor(payload){
   return {type: C.ADD_COLORS, payload}
 };
 
-// 
