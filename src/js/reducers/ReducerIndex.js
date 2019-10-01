@@ -24,48 +24,31 @@ const initialState = {
       timestamp: "Thu Mar 10 2016 01:11:12 GMT-0800 (PST)"
     }
   ],
-  
 };
 
 function rootReducer(state = initialState, action){
-  console.log(`hello I am here in switch statement`);
   switch(action.type){
     case C.ADD_COLORS:
-        // console.log(`add color ${action.payload}`);
         return Object.assign({}, state, {
           colors: state.colors.concat(action.payload)
         });
-    // case C.RATE_COLORS:
-    //   return (state.id !==action.id)?
-    //     state:
-    //       {
-    //         ...state,
-    //         rating: action.rating
-    //       }
-    // case C.REMOVE_COLORS:
-    //   return state.filter(
-    //     c=>c.id !==action.id)
-    case C.REMOVE_COLORS: //works with input 09/27/2019
+    case C.REMOVE_COLORS: 
         console.log(`here in remove payload id is ${action.payload}`);
       const newArray = {...state}.colors.filter(x=>(x.id !==action.payload.id));
       console.log(newArray);
       const objectArray = {colors: newArray}
       return objectArray;       
     case C.UP_RATING:
-      console.log(`in up rating ${action.payload.rating} ${typeof(action.payload.rating)}`);
       const newArrayRating = {...state}.colors.map(x=>(x.id===action.payload.id)? {...x, rating: x.rating+=1}: x);
-      console.log({newArrayRating});
-      // action.payload.rating += 1; 
       const objectArrayRating = {colors: newArrayRating}
       return objectArrayRating;  
-      // return state;
     case C.DOWN_RATING:
-      action.payload.rating -= 1;
-      return state;
+      const newArrayRatingDown = {...state}.colors.map(x=>(x.id===action.payload.id)? {...x, rating: x.rating-=1}: x);
+      const objectArrayRatingDown = {colors: newArrayRatingDown}
+      return objectArrayRatingDown; 
     default:
       return state;
   }
 };
-
 
 export default rootReducer;
