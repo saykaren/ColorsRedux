@@ -53,8 +53,12 @@ function rootReducer(state = initialState, action){
       return objectArray;       
     case C.UP_RATING:
       console.log(`in up rating ${action.payload.rating} ${typeof(action.payload.rating)}`);
-      action.payload.rating += 1; 
-      return state;  
+      const newArrayRating = {...state}.colors.map(x=>(x.id===action.payload.id)? {...x, rating: x.rating+=1}: x);
+      console.log({newArrayRating});
+      // action.payload.rating += 1; 
+      const objectArrayRating = {colors: newArrayRating}
+      return objectArrayRating;  
+      // return state;
     case C.DOWN_RATING:
       action.payload.rating -= 1;
       return state;

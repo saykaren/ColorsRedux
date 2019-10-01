@@ -22,7 +22,7 @@ function App(){
        
     </div>
     <section className="colorAdder">
-      Redux Store List 
+      <strong>Redux Store List </strong>
       <ul className='list-group list-group-flush'>
     {colors.map(el=>(
       <li className='list-group-item' key={el.id} >
