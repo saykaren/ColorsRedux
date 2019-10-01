@@ -33,9 +33,7 @@ function rootReducer(state = initialState, action){
           colors: state.colors.concat(action.payload)
         });
     case C.REMOVE_COLORS: 
-        console.log(`here in remove payload id is ${action.payload}`);
       const newArray = {...state}.colors.filter(x=>(x.id !==action.payload.id));
-      console.log(newArray);
       const objectArray = {colors: newArray}
       return objectArray;       
     case C.UP_RATING:
