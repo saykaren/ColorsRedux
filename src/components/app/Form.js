@@ -10,6 +10,7 @@ function mapDisptachToProps (dispatch){
 }
 
 const ConnectedForm = (props)=>{
+  console.log(props);
   const [title, setTitle] = useState('');
   const [color, setColor] = useState('');
   const [rating] = useState(0);
